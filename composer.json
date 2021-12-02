@@ -1,0 +1,20 @@
+{
+    "name": "aremiki/oauth2-steam",
+    "type": "library",
+    "require": {
+        "league/oauth2-client": "^2.0",
+        "symfony/dependency-injection": "^4.4|^5.0|^6.0",
+        "symfony/framework-bundle": "^4.4|^5.0|^6.0",
+        "symfony/http-client": "^4.4|^5.0|^6.0",
+        "symfony/http-foundation": "^4.4|^5.0|^6.0",
+        "symfony/routing": "^4.4|^5.0|^6.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abdelhakim Remiki",
+            "email": "abdelhakim.remiki@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
