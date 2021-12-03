@@ -28,12 +28,20 @@ class SteamProvider extends AbstractProvider
         $username = '';
         $avatarHash = '';
 
+        if (null === $steamid)
+        {
+            throw new \UnexpectedValueException('change exception type');
+        }
 
-        if (null === $key)
+        if (null !== $key)
         {
             $url = str_replace(['{key}', '{steamid}'], [$key, $steamid], $this->getUserDetailsUrl());
             $response = $this->getHttpClient()->request('GET', $url);
-            $response->toArray(false);
+
+            $datas = $response->toArray(false);
+
+            $username = $datas['response']['players'][0]['personaname'] ?? '';
+            $avatarHash = $datas['response']['players'][0]['avatarhash'] ?? '';
         }
 
         return new SteamResourceOwner($steamid, $username, $avatarHash);
